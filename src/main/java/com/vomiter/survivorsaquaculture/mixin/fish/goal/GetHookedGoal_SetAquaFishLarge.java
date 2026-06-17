@@ -21,7 +21,7 @@ public class GetHookedGoal_SetAquaFishLarge {
             Optional<AquaFishes> fishOptional = AquaFishes.byEntityType(fishEntity.getType());
             if(fishOptional.isPresent()){
                 var fish = fishOptional.get();
-                return AquacultureAPI.FISH_DATA.getFilletAmount(fish.item()) > 8;
+                return fish.getFilletAmount() > 8;
             }
         }
         return original;
